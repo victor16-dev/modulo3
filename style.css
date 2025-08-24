@@ -1,0 +1,393 @@
+:root {
+            --wikipedia-bg: #f8f9fa;
+            --wikipedia-content-bg: #ffffff;
+            --wikipedia-border: #a2a9b1;
+            --wikipedia-link: #0645ad;
+            --wikipedia-link-hover: #0b0080;
+            --wikipedia-header-bg: #eaecf0;
+            --wikipedia-infobox-bg: #f8f9fa;
+            --palmeiras-green: #006437;
+            --palmeiras-white: #ffffff;
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --transition: all 0.2s ease;
+        }
+
+        /* Reset e estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Liberation Sans', 'Nimbus Sans', Arial, sans-serif;
+            line-height: 1.6;
+            color: #202122;
+            background-color: var(--wikipedia-bg);
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            color: var(--wikipedia-link);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--wikipedia-link-hover);
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Cabeçalho estilo Wikipedia */
+        .wikipedia-header {
+            background-color: var(--wikipedia-header-bg);
+            border-bottom: 1px solid var(--wikipedia-border);
+            padding: 0.5rem 0;
+        }
+
+        .wikipedia-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: normal;
+            color: #000;
+        }
+
+        .search-box {
+            display: flex;
+            max-width: 300px;
+        }
+
+        .search-box input {
+            padding: 0.5rem;
+            border: 1px solid var(--wikipedia-border);
+            border-right: none;
+            width: 100%;
+        }
+
+        .search-box button {
+            background: var(--wikipedia-content-bg);
+            border: 1px solid var(--wikipedia-border);
+            padding: 0 1rem;
+            cursor: pointer;
+        }
+
+        /* Navegação */
+        .wikipedia-nav {
+            background-color: var(--wikipedia-content-bg);
+            border-bottom: 1px solid var(--wikipedia-border);
+            margin-bottom: 1rem;
+        }
+
+        .wikipedia-nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .wikipedia-nav li {
+            border-right: 1px solid var(--wikipedia-border);
+        }
+
+        .wikipedia-nav a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #54595d;
+        }
+
+        .wikipedia-nav a:hover {
+            background-color: var(--wikipedia-header-bg);
+            color: #000;
+        }
+
+        /* Layout principal */
+        .main-content {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+        }
+
+        /* Conteúdo principal */
+        .article-content {
+            flex: 1;
+            background-color: var(--wikipedia-content-bg);
+            padding: 1.5rem;
+            border: 1px solid var(--wikipedia-border);
+            border-radius: 2px;
+            box-shadow: var(--shadow);
+        }
+
+        .article-title {
+            font-size: 1.8rem;
+            border-bottom: 1px solid var(--wikipedia-border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            color: #000;
+            font-weight: normal;
+        }
+
+        .article-subtitle {
+            font-size: 0.875rem;
+            color: #54595d;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Tabela de conteúdos */
+        .toc {
+            background-color: var(--wikipedia-header-bg);
+            border: 1px solid var(--wikipedia-border);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            width: auto;
+            display: table;
+            border-radius: 3px;
+        }
+
+        .toc-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.3rem;
+        }
+
+        .toc .toclevel-1 {
+            margin-left: 0;
+        }
+
+        .toc .toclevel-2 {
+            margin-left: 1.5em;
+        }
+
+        /* Seções do artigo */
+        .article-section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            border-bottom: 1px solid var(--wikipedia-border);
+            padding-bottom: 0.3rem;
+            margin: 1.5rem 0 1rem 0;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            margin: 1.2rem 0 0.8rem 0;
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* Barra lateral */
+        .sidebar {
+            width: 320px;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+            }
+        }
+
+        .infobox {
+            background-color: var(--wikipedia-infobox-bg);
+            border: 1px solid var(--wikipedia-border);
+            padding: 0.5rem;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+            border-radius: 3px;
+            box-shadow: var(--shadow);
+        }
+
+        .infobox-title {
+            background-color: var(--palmeiras-green);
+            color: var(--palmeiras-white);
+            text-align: center;
+            padding: 0.5rem;
+            margin: -0.5rem -0.5rem 0.5rem -0.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 2px 2px 0 0;
+        }
+
+        .infobox-image {
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .infobox-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .infobox table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .infobox th {
+            text-align: left;
+            padding: 0.3rem 0.5rem;
+            width: 40%;
+            vertical-align: top;
+        }
+
+        .infobox td {
+            padding: 0.3rem 0.5rem;
+            vertical-align: top;
+        }
+
+        .infobox tr:nth-child(odd) {
+            background-color: rgba(0, 100, 55, 0.05);
+        }
+
+        /* Melhorias modernas */
+        .modern-card {
+            background: var(--wikipedia-content-bg);
+            border: 1px solid var(--wikipedia-border);
+            border-radius: 3px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .modern-card-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--palmeiras-green);
+            border-bottom: 2px solid var(--palmeiras-green);
+            padding-bottom: 0.3rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(0, 100, 55, 0.1);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            background: rgba(0, 100, 55, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--palmeiras-green);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #54595d;
+        }
+
+        /* Rodapé */
+        .wikipedia-footer {
+            background-color: var(--wikipedia-header-bg);
+            border-top: 1px solid var(--wikipedia-border);
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+            font-size: 0.875rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #000;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.3rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--wikipedia-border);
+            width: 100%;
+        }
+
+        /* Tabelas modernizadas */
+        .modern-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .modern-table th {
+            background-color: var(--palmeiras-green);
+            color: white;
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        .modern-table td {
+            padding: 0.5rem;
+            border-bottom: 1px solid var(--wikipedia-border);
+        }
+
+        .modern-table tr:nth-child(even) {
+            background-color: var(--wikipedia-header-bg);
+        }
+
+        .modern-table tr:hover {
+            background-color: rgba(0, 100, 55, 0.1);
+        }
